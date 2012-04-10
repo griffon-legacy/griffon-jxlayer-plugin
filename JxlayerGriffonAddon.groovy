@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2010 the original author or authors.
+ * Copyright 2009-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 import griffon.jxlayer.factory.*
 
+import griffon.util.ApplicationHolder
 import groovy.swing.factory.BeanFactory
 import org.jdesktop.jxlayer.plaf.ext.*
 import static griffon.util.GriffonApplicationUtils.isJdk17
@@ -25,6 +26,7 @@ import static griffon.util.GriffonApplicationUtils.isJdk17
  */
 class JxlayerGriffonAddon {
    JxlayerGriffonAddon() {
+       super(ApplicationHolder.application)
        if(!isJdk17) {
            factories.buttonPanelUI = new BeanFactory(ButtonPanelUI, true)
            factories.debugRepaintingUI = new BeanFactory(DebugRepaintingUI, true)
@@ -35,7 +37,7 @@ class JxlayerGriffonAddon {
        }
    }
 
-   def factories = [
+   Map factories = [
        jxlayer: new JXLayerFactory()
    ]
 }
