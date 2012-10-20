@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 the original author or authors.
+ * Copyright 2010-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
  */
 
 /**
- * @author Andres.Almiray
+ * @author Andres Almiray
  */
 class JxlayerGriffonPlugin {
     // the plugin version
-    String version = '0.3'
+    String version = '1.0.0'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '0.9.5 > *'
+    String griffonVersion = '1.0.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [swing: '0.9.5']
+    Map dependsOn = [swing: '1.0.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license
@@ -94,7 +94,7 @@ __SampleView.groovy__
         import javax.swing.SwingConstants
         import org.codehaus.griffon.jsilhouette.geom.*
         import com.jhlabs.image.*
-  
+
         def lipsum = """Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -102,13 +102,13 @@ __SampleView.groovy__
         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
         culpa qui officia deserunt mollit anim id est laborum.
         """
-  
+
         createContent = {
            scrollPane(preferredSize: [300, 300] ) {
               textArea(lineWrap: true, wrapStyleWord: true, text: lipsum*3, columns: 40)
            }
         }
-  
+
         application(title: 'JXLayer',
           size: [460, 400],
           locationByPlatform:true,
